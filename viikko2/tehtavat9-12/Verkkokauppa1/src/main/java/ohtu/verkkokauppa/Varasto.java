@@ -6,13 +6,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Varasto implements VarastoInterface {
-
+    @Autowired
     private Kirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;
-
-    @Autowired
-    public Varasto(Kirjanpito kp) {
-        kirjanpito = kp;
+    public Varasto() {
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }

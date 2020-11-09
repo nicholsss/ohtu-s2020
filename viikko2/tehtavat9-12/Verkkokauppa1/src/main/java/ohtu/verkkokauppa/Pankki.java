@@ -6,12 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Pankki implements PankkiInterface {
 
-
-    private Kirjanpito kirjanpito;
     @Autowired
-    public Pankki(Kirjanpito kp) {
-        kirjanpito = kp;
-    }
+    private Kirjanpito kirjanpito;
 
     @Override
     public boolean tilisiirto(String nimi, int viitenumero, String tililta, String tilille, int summa) {

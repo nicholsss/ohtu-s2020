@@ -5,21 +5,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Kauppa {
-
+    @Autowired
     private VarastoInterface varasto;
+    @Autowired
     private PankkiInterface pankki;
     private Ostoskori ostoskori;
-    private ViitegeneraattoriInterface viitegeneraattori;
-    private String kaupanTili;
-    
     @Autowired
-    public Kauppa(Varasto varasto, Pankki pankki, Viitegeneraattori viitegeneraattori) {
-        
-        this.varasto = varasto;
-        this.pankki = pankki;
-        this.viitegeneraattori = viitegeneraattori;
-        kaupanTili = "33333-44455";
-    }
+    private ViitegeneraattoriInterface viitegeneraattori;
+    private String kaupanTili = "33333-44455";
+    
+    
     
 
     public void aloitaAsiointi() {
